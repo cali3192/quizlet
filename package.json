@@ -10,13 +10,18 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "apollo-boost": "^0.4.9",
+    "graphql": "^15.3.0",
+    "graphql-tag": "^2.11.0",
     "react": "^16.13.1",
+    "react-apollo": "^3.1.5",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "REACT_APP_API_HOST=https://api.8base.com/ckg1ks1p8002a07mecux285yc react-scripts start",
+    "pre-build": "rm -rf build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

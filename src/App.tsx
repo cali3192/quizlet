@@ -1,12 +1,24 @@
-import React from "react";
+import React, { FC } from "react";
+import { ApolloProvider } from "react-apollo";
+import ApolloClient from "apollo-boost";
+
 import "./App.css";
 
-function App() {
+const client = new ApolloClient({
+  uri: process.env.REACT_API_HOST,
+});
+
+const App: FC = () => {
+  const apiHost = process.env.REACT_APP_API_HOST;
+  console.log("LOG: App:FC ", { apiHost });
+
   return (
-    <div className="App">
-      <header className="App-header">testing</header>
-    </div>
+    <ApolloProvider client={client}>
+      <div className="App">
+        <header className="App-header">testing</header>
+      </div>
+    </ApolloProvider>
   );
-}
+};
 
 export default App;
